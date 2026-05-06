@@ -1,19 +1,19 @@
 # Node configuration
 nodes:
-  - node_id: "node-1"
-    host: "127.0.0.1"
+  - node_id: node-1
+    host: 192.168.1.161
     port: 5001
-  - node_id: "node-2"
-    host: "127.0.0.1"
+  - node_id: node-2
+    host: 192.168.1.243
     port: 5002
-  - node_id: "node-3"
-    host: "127.0.0.1"
+  - node_id: node-3
+    host: 192.168.1.158
     port: 5003
-  - node_id: "node-4"
-    host: "127.0.0.1"
+  - node_id: node-4
+    host: 192.168.1.212
     port: 5004
-  - node_id: "node-5"
-    host: "127.0.0.1"
+  - node_id: node-5
+    host: 192.168.1.219
     port: 5005
 
 # Heartbeat settings
@@ -49,7 +49,3 @@ network:
 # Logging
 logs:
   directory: "logs_ci_30/"
-
-# Results output
-results:
-  directory: "results/"
