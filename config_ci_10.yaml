@@ -1,0 +1,55 @@
+# Node configuration
+nodes:
+  - node_id: "node-1"
+    host: "127.0.0.1"
+    port: 5001
+  - node_id: "node-2"
+    host: "127.0.0.1"
+    port: 5002
+  - node_id: "node-3"
+    host: "127.0.0.1"
+    port: 5003
+  - node_id: "node-4"
+    host: "127.0.0.1"
+    port: 5004
+  - node_id: "node-5"
+    host: "127.0.0.1"
+    port: 5005
+
+# Heartbeat settings
+heartbeat:
+  interval: 1.0
+  check_interval: 0.5
+
+# Detector parameters
+detectors:
+  fixed_timeout:
+    timeout: 5.0
+
+  adaptive_timeout:
+    default_timeout: 5.0
+    k: 5.0
+    window_size: 50
+
+  phi_accrual:
+    threshold: 9.5
+    window_size: 30
+
+  confidence_interval:
+    threshold: 1.5
+    window_size: 10
+    confidence_level: 0.95
+
+# Network simulator defaults
+network:
+  loss_rate: 0.0
+  delay: 0.0
+  jitter: 0.0
+
+# Logging
+logs:
+  directory: "logs/"
+
+# Results output
+results:
+  directory: "results/"
