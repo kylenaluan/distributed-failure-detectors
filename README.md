@@ -57,7 +57,7 @@ This file is **not in the repository** — it is listed in `.gitignore` and must
 
 ### Why it is not committed
 
-`collection_config.yaml` contains a SSH private key path and the floating IPs of your Chameleon nodes. Floating IPs change every time a new lease is created, so the file would be stale immediately after any lease renewal. More importantly, exposing SSH key paths alongside node addresses in a public or shared repository is a security risk. For these reasons the file is intentionally excluded from version control.
+`collection_config.yaml` contains a SSH private key path and the floating IPs of the Chameleon nodes. Floating IPs change every time a new lease is created, so the file would be stale immediately after any lease renewal. More importantly, exposing SSH key paths alongside node addresses in a public or shared repository is a security risk. For these reasons the file is intentionally excluded from version control.
 
 ### Format
 
@@ -81,8 +81,8 @@ nodes:
 
 ### What goes in each field
 
-- `ssh_key` — path to the `.pem` file you downloaded when creating your Chameleon key pair. On Windows use a full path like `C:/Users/yourname/.ssh/your-key.pem`.
-- `floating_ip` — the public floating IP associated with each node's `sharednet1` interface. Find these under Network → Floating IPs in the Chameleon dashboard. These are the IPs you use to SSH into each node, not the private `failure-detector-net` IPs.
+- `ssh_key` — path to the `.pem` file downloaded when creating a Chameleon key pair. On Windows use a full path like `C:/Users/yourname/.ssh/your-key.pem`.
+- `floating_ip` — the public floating IP associated with each node's `sharednet1` interface. Find these under Network → Floating IPs in the Chameleon dashboard. These are the IPs are used to SSH into each node, not the private `failure-detector-net` IPs.
 
 ### Usage
 
@@ -90,4 +90,4 @@ nodes:
 
 python scripts/collect_logs.py
 
-This pulls each node's log files to your local machine into `logs/{node_id}/` directories, after which you can run `scripts/merge_logs.py` and `analyze.py` to produce results.
+This pulls each node's log files to a local machine into `logs/{node_id}/` directories, after which `scripts/merge_logs.py` and `analyze.py` can be run to produce results.

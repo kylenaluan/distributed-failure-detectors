@@ -1,2 +1,2 @@
-from analysis.analyze import Analyzer
+from analysis.analyzer import Analyzer
 from analysis.metrics import MetricsComputer
