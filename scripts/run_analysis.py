@@ -2,7 +2,7 @@ import argparse
 import yaml
 from pathlib import Path
 
-from analysis.analyze import Analyzer
+from analysis.analyzer import Analyzer
 
 
 def load_config(config_path):
