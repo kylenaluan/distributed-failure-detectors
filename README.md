@@ -51,17 +51,17 @@ When running these on Chameleon, update the node `host` fields in the same way a
 
 ---
 
-## collection_config_ci_10.yaml
+## collection_config.yaml
 
 This file is **not in the repository** — it is listed in `.gitignore` and must be created manually on your local machine before collecting logs from Chameleon nodes.
 
 ### Why it is not committed
 
-`collection_config_ci_10.yaml` contains a SSH private key path and the floating IPs of your Chameleon nodes. Floating IPs change every time a new lease is created, so the file would be stale immediately after any lease renewal. More importantly, exposing SSH key paths alongside node addresses in a public or shared repository is a security risk. For these reasons the file is intentionally excluded from version control.
+`collection_config.yaml` contains a SSH private key path and the floating IPs of your Chameleon nodes. Floating IPs change every time a new lease is created, so the file would be stale immediately after any lease renewal. More importantly, exposing SSH key paths alongside node addresses in a public or shared repository is a security risk. For these reasons the file is intentionally excluded from version control.
 
 ### Format
 
-Create `collection_config_ci_10.yaml` in the project root with the following structure:
+Create `collection_config.yaml` in the project root with the following structure:
 
 ```yaml
 ssh_key: ~/.ssh/your-key.pem
@@ -86,7 +86,7 @@ nodes:
 
 ### Usage
 
-`collection_config_ci_10.yaml` is read by `scripts/collect_logs.py` after experiments finish. It tells the script which nodes to connect to and how to authenticate:
+`collection_config.yaml` is read by `scripts/collect_logs.py` after experiments finish. It tells the script which nodes to connect to and how to authenticate:
 
 python scripts/collect_logs.py
 
