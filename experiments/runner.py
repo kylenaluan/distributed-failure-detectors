@@ -66,9 +66,9 @@ class ExperimentRunner:
     def _build_detectors(self, node, event_recorder):
         detectors = {}
 
-        detectors['FixedTimeout'] = FixedTimeoutDetector(node, event_recorder, self.check_interval, self.fixed_timeout)
-        detectors['AdaptiveTimeout'] = AdaptiveTimeoutDetector(node, event_recorder, self.check_interval, self.adaptive_default, self.adaptive_k, self.adaptive_window)
-        detectors['PhiAccrual'] = PhiAccrualDetector(node, event_recorder, self.check_interval, self.phi_threshold, self.phi_window)
+        # detectors['FixedTimeout'] = FixedTimeoutDetector(node, event_recorder, self.check_interval, self.fixed_timeout)
+        # detectors['AdaptiveTimeout'] = AdaptiveTimeoutDetector(node, event_recorder, self.check_interval, self.adaptive_default, self.adaptive_k, self.adaptive_window)
+        # detectors['PhiAccrual'] = PhiAccrualDetector(node, event_recorder, self.check_interval, self.phi_threshold, self.phi_window)
         detectors['ConfidenceInterval'] = ConfidenceIntervalDetector(node, event_recorder, self.check_interval, self.confidence_threshold, self.confidence_window, self.confidence_level)
 
         return detectors
