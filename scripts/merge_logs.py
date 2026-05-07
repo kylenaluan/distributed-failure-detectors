@@ -12,10 +12,6 @@ def load_collection_config(config_path):
 
 
 def get_scenario_name(filename):
-    # derive scenario name from filename by stripping node_id and _events suffix
-    # e.g. Single_Node_Crash_node-1_events.json -> Single_Node_Crash
-    parts = filename.stem.split('_')
-
     # node id is always the last two parts before _events (e.g. node-1)
     # strip trailing _events, then strip trailing node-X
     name = filename.stem

@@ -80,6 +80,7 @@ def main():
         runner = ExperimentRunner(scenario, config, args.node)
         runner.run()
         print(f'Finished scenario: {scenario.name}')
+        time.sleep(5)  # brief pause between scenarios to allow clean shutdown
 
 if __name__ == '__main__':
     main()

@@ -49,6 +49,8 @@ class HeartbeatListener(threading.Thread):
         self.running = False
         self.daemon = True
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        # allow port reuse so the next scenario can bind immediately after the previous one releases
+        self.sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         # timeout prevents recvfrom from blocking forever so the loop can exit cleanly
         self.sock.settimeout(1.0)
         self.sock.bind((self.node.host, self.node.port))
