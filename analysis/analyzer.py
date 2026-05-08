@@ -1,4 +1,3 @@
-import json
 import csv
 from pathlib import Path
 from analysis.metrics import MetricsComputer

@@ -1,8 +1,12 @@
 import argparse
 import yaml
 from pathlib import Path
+import sys
 
-from analysis.analyzer import Analyzer
+# add project root to path so analysis package is importable
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from analysis import Analyzer
 
 
 def load_config(config_path):
